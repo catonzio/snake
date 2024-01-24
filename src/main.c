@@ -14,9 +14,9 @@ snake_t *testSnake() {
 }
 
 fruit_list_t *testFruit() {
-    fruit_list_t *list = createFruitList(1, 1);
-    list = addFruit(list, 2, 2);
-    list = addFruit(list, 3, 3);
+    fruit_list_t *list = createFruitList(3, 5);
+    list = addFruit(list, 5, 3);
+    list = addFruit(list, 10, 8);
 
     printFruitList(list);
 

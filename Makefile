@@ -7,11 +7,12 @@ SRC_DIR = src
 
 GUI_DIR = $(SRC_DIR)/gui
 STRUCTURES_DIR = $(SRC_DIR)/structures
+UTILS_DIR = $(SRC_DIR)/utils
 
 TARGET = $(BIN_DIR)/snake
-SOURCES = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(GUI_DIR)/*.c) $(wildcard $(STRUCTURES_DIR)/*.c)
+SOURCES = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(GUI_DIR)/*.c) $(wildcard $(STRUCTURES_DIR)/*.c) $(wildcard $(UTILS_DIR)/*.c)
 OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
-HEADERS = $(wildcard $(SRC_DIR)/*.h) $(wildcard $(GUI_DIR)/*.h) $(wildcard $(STRUCTURES_DIR)/*.h)
+HEADERS = $(wildcard $(SRC_DIR)/*.h) $(wildcard $(GUI_DIR)/*.h) $(wildcard $(STRUCTURES_DIR)/*.h) $(wildcard $(UTILS_DIR)/*.h)
 
 .PHONY: all clean
 

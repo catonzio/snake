@@ -1,6 +1,9 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
+#define SNAKE_HEAD_SYM "\U0001F47D"
+#define SNAKE_BODY_SYM "\U0001F7E2"
+
 #include <stdlib.h>
 #include <stdio.h>
 

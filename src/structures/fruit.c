@@ -56,3 +56,24 @@ fruit_list_t *addFruit(fruit_list_t *list, int x, int y) {
     return list;
 }
 
+fruit_list_t *addRandomFruit(fruit_list_t *list) {
+    int x = randomNumberRange(0, SIZE_X-1);
+    int y = randomNumberRange(0, SIZE_Y-1);
+
+    return addFruit(list, x, y);
+}
+
+fruit_t *getFruitAt(fruit_list_t *list, int x, int y) {
+    fruit_node_t *current = list->head;
+
+    int i = 0;
+    while (i < list->length) {
+        if (current->fruit->x == x && current->fruit->y == y) {
+            return current->fruit;
+        } else {
+            current = current->next;
+        }
+        i++;
+    }
+    return NULL;
+}
