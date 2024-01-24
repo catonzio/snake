@@ -26,6 +26,7 @@ char *getBorderChar(int x, int y) {
 }
 
 void drawScreen(snake_t *snake, fruit_list_t *fruitList) {
+    int charWidth = 2;
     for(int j=0; j<SIZE_Y; j++) {
         for(int i=0; i<SIZE_X; i++) {
             char *charToPrint = " ";
@@ -41,7 +42,7 @@ void drawScreen(snake_t *snake, fruit_list_t *fruitList) {
                     }
                 }
             }
-            printf("%s", charToPrint);
+            printf("%-*s", charWidth, charToPrint);
         }
         printf("\n");
     }

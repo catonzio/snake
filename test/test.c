@@ -5,6 +5,8 @@
 int main() {
     // char *c = "\U0001F600";
     char *c = EMOJI;
-    printf("Hello there: %s\n", c);
+    int width = 2;
+    printf("%-*s a\n", width, c);
+    printf("%-*s a\n", width, " ");
     return 0;
 }
