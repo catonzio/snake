@@ -33,12 +33,10 @@ fruit_node_t *createFruitNode(int x, int y) {
     return fruitNode;
 }
 
-fruit_list_t *createFruitList(int x, int y) {
-    fruit_node_t *head = createFruitNode(x, y);
-
+fruit_list_t *createFruitList() {
     fruit_list_t *list = malloc(sizeof(fruit_list_t));
-    list->head = head;
-    list->length = 1;
+    list->head = NULL;
+    list->length = 0;
 
     return list;
 }
@@ -47,18 +45,24 @@ fruit_list_t *addFruit(fruit_list_t *list, int x, int y) {
     fruit_node_t *fruitNode = createFruitNode(x, y);
 
     fruit_node_t *current = list->head;
-    while (current->next != NULL) {
-        current = current->next;
+
+    if (current == NULL) {
+        list->head = fruitNode;
+        list->length = 1;
+    } else {
+        while (current->next != NULL) {
+            current = current->next;
+        }
+        current->next = fruitNode;
+        list->length++;
     }
-    current->next = fruitNode;
-    list->length++;
 
     return list;
 }
 
 fruit_list_t *addRandomFruit(fruit_list_t *list) {
-    int x = randomNumberRange(0, SIZE_X-1);
-    int y = randomNumberRange(0, SIZE_Y-1);
+    int x = randomNumberRange(1, SIZE_X-2);
+    int y = randomNumberRange(1, SIZE_Y-2);
 
     return addFruit(list, x, y);
 }

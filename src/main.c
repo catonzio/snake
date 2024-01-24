@@ -2,6 +2,7 @@
 #include "gui/gui.h"
 #include "structures/snake.h"
 #include "structures/fruit.h"
+#include "utils/random.h"
 
 snake_t *testSnake() {
     snake_t *snake = initializeSnake(1, 1);
@@ -14,9 +15,12 @@ snake_t *testSnake() {
 }
 
 fruit_list_t *testFruit() {
-    fruit_list_t *list = createFruitList(3, 5);
-    list = addFruit(list, 5, 3);
-    list = addFruit(list, 10, 8);
+    fruit_list_t *list = createFruitList();
+    // list = addFruit(list, 5, 3);
+    // list = addFruit(list, 10, 8);
+    list = addRandomFruit(list);
+    list = addRandomFruit(list);
+    list = addRandomFruit(list);
 
     printFruitList(list);
 
@@ -24,6 +28,9 @@ fruit_list_t *testFruit() {
 }
 
 int main() {
+    // set seed as current time
+    srand(time(0));
+
     snake_t *snake = testSnake();
     printf("\n");
     fruit_list_t *fruitList = testFruit();

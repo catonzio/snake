@@ -30,7 +30,7 @@ void printFruit(fruit_t *fruit);
 void printFruitList(fruit_list_t *list);
 fruit_t *createFruit(int x, int y);
 fruit_node_t *createFruitNode(int x, int y);
-fruit_list_t *createFruitList(int x, int y);
+fruit_list_t *createFruitList();
 fruit_list_t *addFruit(fruit_list_t *list, int x, int y);
 fruit_list_t *addRandomFruit(fruit_list_t *list);
 fruit_t *getFruitAt(fruit_list_t *list, int x, int y);
