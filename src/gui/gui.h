@@ -1,8 +1,8 @@
 #ifndef GUI_H
 #define GUI_H
 
-#include "../structures/snake.h"
 #include "../structures/fruit.h"
+#include "../structures/snake.h"
 #include "../utils/constants.h"
 
 #define LT_CORNER "\U0001F9F1"
@@ -23,4 +23,3 @@ void drawScreen(snake_t *snake, fruit_list_t *fruitList);
 char *getBorderChar(int x, int j);
 
 #endif /* GUI_H */
-

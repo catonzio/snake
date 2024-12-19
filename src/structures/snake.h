@@ -4,8 +4,10 @@
 #define SNAKE_HEAD_SYM "\U0001F47D"
 #define SNAKE_BODY_SYM "\U0001F7E2"
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "../utils/constants.h"
 
 struct cell {
     int x;
@@ -29,6 +31,10 @@ cell_t *createCell(int x, int y, int isHead, int isLast);
 snake_t *initializeSnake(int x, int y);
 snake_t *addCell(snake_t *snake, int x, int y);
 cell_t *getCellAt(snake_t *snake, int x, int y);
+void move(snake_t *snake, int direction);
+void moveLeft(snake_t *snake);
+void moveUp(snake_t *snake);
+void moveRight(snake_t *snake);
+void moveDown(snake_t *snake);
 
 #endif /* SNAKE_H */
-

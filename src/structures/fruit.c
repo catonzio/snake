@@ -60,9 +60,12 @@ fruit_list_t *addFruit(fruit_list_t *list, int x, int y) {
     return list;
 }
 
-fruit_list_t *addRandomFruit(fruit_list_t *list) {
-    int x = randomNumberRange(1, SIZE_X-2);
-    int y = randomNumberRange(1, SIZE_Y-2);
+fruit_list_t *addRandomFruit(fruit_list_t *list, snake_t *snake) {
+    int x, y;
+    do {
+        x = randomX();
+        y = randomY();
+    } while (getCellAt(snake, x, y) != NULL);
 
     return addFruit(list, x, y);
 }

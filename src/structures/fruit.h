@@ -3,10 +3,12 @@
 
 #define FRUIT_SYM "\U0001F34E"
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "../utils/constants.h"
 #include "../utils/random.h"
+#include "snake.h"
 
 struct fruit {
     int x;
@@ -32,7 +34,6 @@ fruit_t *createFruit(int x, int y);
 fruit_node_t *createFruitNode(int x, int y);
 fruit_list_t *createFruitList();
 fruit_list_t *addFruit(fruit_list_t *list, int x, int y);
-fruit_list_t *addRandomFruit(fruit_list_t *list);
+fruit_list_t *addRandomFruit(fruit_list_t *list, snake_t *snake);
 fruit_t *getFruitAt(fruit_list_t *list, int x, int y);
 #endif /* FRUIT_H */
-

@@ -71,3 +71,22 @@ cell_t *getCellAt(snake_t *snake, int x, int y) {
     return NULL;
 }
 
+void move(snake_t *snake, int direction) {
+    if (direction == LEFT) {
+        moveLeft(snake);
+    } else if (direction == UP) {
+        moveUp(snake);
+    } else if (direction == RIGHT) {
+        moveRight(snake);
+    } else if (direction == DOWN) {
+        moveDown(snake);
+    }
+}
+
+void moveLeft(snake_t *snake) {}
+
+void moveUp(snake_t *snake) {}
+
+void moveRight(snake_t *snake) {}
+
+void moveDown(snake_t *snake) {}
